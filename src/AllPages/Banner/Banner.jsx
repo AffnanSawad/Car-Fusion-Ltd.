@@ -8,9 +8,9 @@ const Banner = () => {
        
         
     return (
-      <div className="">
+      <div className="bg-black">
 
-<Carousel  className="mb-20" autoPlay interval={1500} infiniteLoop stopOnHover={false}>
+<Carousel   autoPlay interval={3000} infiniteLoop stopOnHover={false}>
       <div>
         <img  src="https://i.ibb.co.com/Y4N5ks6V/zan-lazarevic-1-BWBi-UUT-AA-unsplash.jpg"   alt="Banner 1" />
       </div>
