@@ -7,11 +7,11 @@ const Sponsered = () => {
        {/* title */}
         <section className="text-center px-4 py-5">
           <h1 className="text-3xl text-white md:text-4xl font-bold">
-            Sponsored <span className="text-orange-400"> By </span>
+            Sponsered <span className="text-orange-400"> By </span>
           </h1>
         </section>
       
-        <div className="container mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4 md:p-8 mt-10">
+        <div className="container mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4 md:p-8 ">
           {[
             "https://i.ibb.co.com/1JPKghqX/images-1.png",
             "https://i.ibb.co.com/0p5046np/coca-cola-classic-logo-67kwh94b9j03o8z1-67kwh94b9j03o8z1.jpg",

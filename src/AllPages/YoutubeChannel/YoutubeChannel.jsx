@@ -5,7 +5,7 @@ const YoutubeChannel = () => {
         <div className="bg-orange-50 py-10">
         {/* Section Title */}
         <section className="text-center px-4">
-          <h1 className="text-3xl md:text-4xl font-bold">
+          <h1 className="text-3xl md:text-4xl font-bold ">
             Visit our <span className="text-orange-400">YouTube Channel!</span>
           </h1>
         </section>

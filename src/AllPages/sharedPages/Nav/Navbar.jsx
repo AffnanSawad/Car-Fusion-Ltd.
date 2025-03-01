@@ -10,12 +10,12 @@ const Navbar = () => {
     const NavOptions = <>  
     
     
-        <li className="hover:text-orange-200 uppercase"><Link to='/'>Home</Link></li>
-        <li className="hover:text-orange-200 uppercase"><Link to='/aboutus'> About Us  </Link></li>
-        <li className="hover:text-orange-200 uppercase"><Link to='/collections'> Collections </Link></li>
-        <li className="hover:text-orange-200 uppercase"><Link to='/sellcar'>  Sell Car </Link></li>
-       <li className="hover:text-orange-200 uppercase"><Link to='/contact'> Contact Us </Link></li>                  
-       <li className="hover:text-orange-200 uppercase"><Link to='/location'> ShowRoom </Link></li> 
+        <li className="hover:text-orange-300 uppercase"><Link to='/'>Home</Link></li>
+        <li className="hover:text-orange-300 uppercase"><Link to='/aboutus'> About Us  </Link></li>
+        <li className="hover:text-orange-300 uppercase"><Link to='/collections'> Collections </Link></li>
+        <li className="hover:text-orange-300 uppercase"><Link to='/sellcar'>  Sell Car </Link></li>
+       <li className="hover:text-orange-300 uppercase"><Link to='/contact'> Contact Us </Link></li>                  
+       <li className="hover:text-orange-300 uppercase"><Link to='/location'> ShowRoom </Link></li> 
     
     
     
