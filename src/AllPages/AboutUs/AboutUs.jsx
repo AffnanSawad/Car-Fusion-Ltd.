@@ -4,7 +4,7 @@ const AboutUs = () => {
     return (
         <div className="bg-orange-50">
         {/* Cover Section */}
-        <div className="relative w-full h-[70vh]">
+        <div className="relative w-full h-[75vh]">
           <img
             src="https://i.ibb.co.com/h1c4bbL6/luxury-showroom-interior-car-dealership-office-new-car-parked-modern-showroom-chairs-customer-servic.webp" 
             alt="About Us Cover"

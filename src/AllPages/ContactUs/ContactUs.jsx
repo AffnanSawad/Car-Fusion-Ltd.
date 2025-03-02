@@ -17,7 +17,7 @@ const ContactUs = () => {
         <div className="bg-orange-50">
     
     
-    <div className="relative w-full h-[70vh]">
+    <div className="relative w-full h-[75vh]">
   {/* Background Image */}
   <img
     src="https://i.ibb.co/jZLtQdM8/side-view-cropped-unrecognizable-business-people-working-common-desk.jpg"

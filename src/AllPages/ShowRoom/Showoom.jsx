@@ -5,7 +5,7 @@ import { MdAddLocationAlt} from "react-icons/md";
 const Showoom = () => {
     return (
         <div className="bg-orange-50">
-        <div className="relative w-full h-[50vh] md:h-[70vh]">
+        <div className="relative w-full h-[50vh] md:h-[75vh]">
           {/* Background Image */}
           <img
             src="https://i.ibb.co.com/cSV9bbbW/d6e860198468263-6642133d3f800.jpg"

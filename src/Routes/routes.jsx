@@ -6,6 +6,7 @@ import Home from "../Home/Home";
 import ContactUs from "../AllPages/ContactUs/ContactUs";
 import Showoom from "../AllPages/ShowRoom/Showoom";
 import AboutUs from "../AllPages/AboutUs/AboutUs";
+import SellCar from "../AllPages/SellCar/SellCar";
 // import Home from "../AllPages/Home/Home/Home";
 
 
@@ -32,6 +33,10 @@ import AboutUs from "../AllPages/AboutUs/AboutUs";
     {
       path: '/aboutus',
       element : <AboutUs></AboutUs>
+    },
+    {
+      path: '/sellcar',
+      element : <SellCar></SellCar>
     }
 
 
