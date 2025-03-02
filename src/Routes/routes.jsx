@@ -3,6 +3,7 @@ import {
   } from "react-router-dom";
 import Main from "../Main/Main";
 import Home from "../Home/Home";
+import ContactUs from "../AllPages/ContactUs/ContactUs";
 // import Home from "../AllPages/Home/Home/Home";
 
 
@@ -18,6 +19,10 @@ import Home from "../Home/Home";
         path : '/',
         element : <Home></Home>
     },
+    {
+      path: '/contact',
+      element: <ContactUs></ContactUs>
+    }
 
 
       ]
