@@ -15,7 +15,7 @@ const Navbar = () => {
         <li className="hover:text-orange-300 uppercase"><Link to='/collections'> Collections </Link></li>
         <li className="hover:text-orange-300 uppercase"><Link to='/sellcar'>  Sell Car </Link></li>
        <li className="hover:text-orange-300 uppercase"><Link to='/contact'> Contact Us </Link></li>                  
-       <li className="hover:text-orange-300 uppercase"><Link to='/location'> ShowRoom </Link></li> 
+       <li className="hover:text-orange-300 uppercase"><Link to='/showroom'> ShowRoom </Link></li> 
     
     
     

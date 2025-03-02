@@ -47,7 +47,7 @@ const ContactUs = () => {
      size={100} className="mt-5 text-gray-700" />
    </h1>
    <div className="card-body items-center text-center">
-     <h2 className="card-title  text-2xl font-bold">Showroom Address</h2>
+     <h2 className="card-title  text-2xl font-bold text-orange-500">Showroom Address</h2>
      <p className="font-semibold">A-99/100, Ganesh Nagar, Tilak Nagar, Delhi 110018</p>
    </div>
  </div>
@@ -58,7 +58,7 @@ const ContactUs = () => {
      <IoCallSharp size={100} className="mt-5" />
    </h1>
    <div className="card-body items-center text-center">
-     <h2 className="card-title text-2xl font-bold">Call Us</h2>
+     <h2 className="card-title text-2xl font-bold text-orange-500">Call Us</h2>
      <p className="font-semibold">+91 9999999 681 <br />
      +91 999999 2532</p>
    </div>
@@ -70,7 +70,7 @@ const ContactUs = () => {
      <MdEmail size={100} className="mt-5 " />
    </h1>
    <div className="card-body items-center text-center">
-     <h2 className="card-title text-2xl font-bold">Mail Us</h2>
+     <h2 className="card-title text-2xl font-bold text-orange-500">Mail Us</h2>
      <p className="font-semibold">tarun.fusion@gmail.com</p>
    </div>
  </div>
@@ -83,7 +83,7 @@ const ContactUs = () => {
      <IoIosTime size={100} className="mt-5 " />
    </h1>
    <div className="card-body items-center text-center">
-     <h2 className="card-title text-2xl font-bold">Timings</h2>
+     <h2 className="card-title text-2xl font-bold text-orange-500">Timings</h2>
      <p className="font-semibold">Mon - Sun: <br />
      10am - 8pm</p>
    </div>
@@ -106,7 +106,7 @@ const ContactUs = () => {
 
 
 
-<div className="form-container w-full bg-orange-50 flex items-center justify-center min-h-screen px-4">
+<div className="form-container w-full bg-orange-50 flex items-center justify-center min-h-screen px-4 hover:scale-110 transition-transform duration-700">
 
   
  
@@ -127,7 +127,7 @@ const ContactUs = () => {
 
     {/* Right Side - Form */}
     <form className="bg-white shadow-lg p-8 rounded-lg w-full md:w-1/2">
-      <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">Contact Us</h2>
+      <h2 className="text-3xl font-bold text-center  mb-6 text-orange-500">Contact Us</h2>
 
       {/* Name & Email in Flex */}
       <div className="flex flex-col md:flex-row gap-4">

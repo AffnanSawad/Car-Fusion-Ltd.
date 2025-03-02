@@ -4,6 +4,8 @@ import {
 import Main from "../Main/Main";
 import Home from "../Home/Home";
 import ContactUs from "../AllPages/ContactUs/ContactUs";
+import Showoom from "../AllPages/ShowRoom/Showoom";
+import AboutUs from "../AllPages/AboutUs/AboutUs";
 // import Home from "../AllPages/Home/Home/Home";
 
 
@@ -22,6 +24,14 @@ import ContactUs from "../AllPages/ContactUs/ContactUs";
     {
       path: '/contact',
       element: <ContactUs></ContactUs>
+    },
+    {
+      path: '/showroom',
+      element : <Showoom></Showoom>
+    },
+    {
+      path: '/aboutus',
+      element : <AboutUs></AboutUs>
     }
 
 
