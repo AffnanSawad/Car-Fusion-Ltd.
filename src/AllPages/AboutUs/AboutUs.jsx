@@ -1,3 +1,4 @@
+import Sponsered from "../Sponsered/Sponsered";
 
 
 const AboutUs = () => {
@@ -61,7 +62,26 @@ const AboutUs = () => {
               </div>
             </div>
           </div>
+
+        
+        
+
+
+
         </div>
+
+
+
+        <div className=" w-full">
+        <Sponsered></Sponsered>
+        </div>
+
+      <hr />
+
+
+
+
+
       </div>
     );
 };
