@@ -21,7 +21,11 @@ const Home = () => {
            <CarLogoPage></CarLogoPage>
            <Reviews></Reviews>
            <Sponsered></Sponsered>
-           <SubMitReview></SubMitReview>
+            <SubMitReview></SubMitReview>
+ 
+  
+
+
         </div>
     );
 };

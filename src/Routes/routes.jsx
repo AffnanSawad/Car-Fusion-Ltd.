@@ -7,6 +7,8 @@ import ContactUs from "../AllPages/ContactUs/ContactUs";
 import Showoom from "../AllPages/ShowRoom/Showoom";
 import AboutUs from "../AllPages/AboutUs/AboutUs";
 import SellCar from "../AllPages/SellCar/SellCar";
+import LogIn from "../Authentication/LogIn/LogIn";
+import SignUp from "../Authentication/SignUp/SignUp";
 // import Home from "../AllPages/Home/Home/Home";
 
 
@@ -37,6 +39,14 @@ import SellCar from "../AllPages/SellCar/SellCar";
     {
       path: '/sellcar',
       element : <SellCar></SellCar>
+    },
+    {
+      path: '/login',
+      element: <LogIn></LogIn>
+    },
+    {
+      path: '/signup',
+      element: <SignUp></SignUp>
     }
 
 

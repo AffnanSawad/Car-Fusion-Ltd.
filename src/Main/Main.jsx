@@ -4,17 +4,17 @@ import Footer from "../AllPages/sharedPages/Footter/Footer";
 
 
 const Main = () => {
-    return (
-        <div className="max-w-screen mx-auto">
-            
-       <Navbar></Navbar>
-       <Outlet></Outlet>
-       <Footer></Footer>   
-          
+  return (
+    <div className="max-w-screen mx-auto">
+      <Navbar></Navbar>
+      <Outlet></Outlet>
+      <Footer></Footer>
+
+    
 
 
-        </div>
-    );
+    </div>
+  );
 };
 
 export default Main;
