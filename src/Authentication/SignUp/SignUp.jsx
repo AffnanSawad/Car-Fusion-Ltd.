@@ -1,13 +1,172 @@
+import { useContext, useState } from "react";
 import { FcGoogle } from "react-icons/fc";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../AuthProvider/AuthProvider";
+import Swal from "sweetalert2";
 
 const SignUp = () => {
+
+ 
+  const {setUser,SignUp,GoogleLogIn, FaceBookLogIn,} = useContext(AuthContext);
+  
+
+  //  success hole navigate kore onno page e niye jabe;
+  const navigate = useNavigate();
+
+  const [error , setError] = useState('');
+
+  
+
+  //  form handler 
+
+  // const handle_SignUp = (e)=> {
+
+  //   e.preventDefault();
+
+  //   const name = e.target.name.value ;
+  //   const email = e.target.email.value;
+  //   const password = e.target.password.value;
+  //   const confirmpassword = e.target.confirmpassword.value;
+  //   const birthdate = e.target.date.value;
+  //   const Gender = e.target.gender.value;
+
+  //   console.log(name,email,password,confirmpassword,birthdate,Gender);
+   
+
+
+  //   setError('');
+      
+  //   // password validation [regex]
+  //   const regex = /^(?=(.*[A-Z])).{6,}$/;
+
+  //   // Check if the password matches the regex
+  //   if (regex.test(password)) {
+  //     console.log("Password is valid.");
+  //   } else {
+  //     console.log("Password is invalid. It must be at least 6 characters long and contain at least one uppercase letter.");
+
+  //     return
+  //   }
+
+
+  //   if(password != confirmpassword){
+  //     console.log('Password Not Macthed');
+
+  //     return ;
+  //   }
+
+  
+
+
+
+  //   // signUp
+  //  SignUp(email,password)
+  //   .then( result => {
+
+  //       setUser(result.user);
+
+  //     // form reset
+  //       e.target.reset();
+
+  //       // navigate kore home e niye jabe
+  //       navigate('/');
+
+  //       // sweetalert
+  //        Swal.fire({
+  //           title: 'Sign In Successfully!',
+  //           // text: 'Successfully Sign In!',
+  //           icon: 'success',
+  //           confirmButtonText: 'Cool'
+  //         })
+     
+
+       
+    
+  //   })
+
+  //   .catch( error=>{
+        
+  //       setError(error.message);
+  //   })
+   
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  // }
+
+
+  const handle_SignUp = (e) => {
+    e.preventDefault();
+  
+    const name = e.target.name.value;
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    const confirmpassword = e.target.confirmpassword.value;
+    const birthdate = e.target.date.value;
+    const Gender = e.target.gender.value;
+  
+    console.log(name, email, password, confirmpassword, birthdate, Gender);
+  
+    // Reset the error message before each attempt
+    setError('');
+  
+    // Password validation [regex]
+    const regex = /^(?=(.*[A-Z])).{6,}$/;
+  
+    // Check if the password matches the regex
+    if (!regex.test(password)) {
+      setError('Password is invalid. It must be at least 6 characters long and contain at least one uppercase letter.');
+      return;
+    }
+  
+    if (password !== confirmpassword) {
+      setError('Password and confirm password do not match.');
+      return;
+    }
+  
+    // Sign Up
+    SignUp(email, password)
+      .then((result) => {
+        setUser(result.user);
+  
+        // Form reset
+        e.target.reset();
+  
+        // Navigate to the home page
+        navigate('/');
+  
+        // SweetAlert for success
+        Swal.fire({
+          title: 'Sign Up Successfully!',
+          icon: 'success',
+          confirmButtonText: 'Cool',
+        });
+      })
+      .catch((error) => {
+        // Show error message if sign-up fails
+        setError(error.message);
+      });
+  };
+  
+
+
+
+
+
+
   return (
     <div className="bg-orange-50 min-h-screen flex items-center justify-center px-6 py-20">
       <div className="flex flex-col md:grid md:grid-cols-2 w-full max-w-6xl px-6 py-10 gap-10 items-center rounded-3xl mt-5">
         
         {/* Left Side - Image */}
-        <div className="w-full flex justify-center items-center shadow-2xl shadow-black md:block hidden">
+        <div className="w-full  justify-center items-center shadow-2xl shadow-black md:block hidden">
           <img
             src="https://i.ibb.co.com/chrj7Xn6/6368592.jpg"
             alt="Sign Up Illustration"
@@ -16,44 +175,44 @@ const SignUp = () => {
         </div>
 
         {/* Right Side - Sign Up Form */}
-        <form className="w-full bg-white p-8 rounded-lg shadow-md flex flex-col gap-6 shadow-2xl shadow-orange-300 mt-5">
+        <form onSubmit={handle_SignUp} className="w-full bg-white p-8 rounded-lg  flex flex-col gap-6 shadow-2xl shadow-orange-300 mt-5">
           <h2 className="text-xl font-bold text-center text-orange-500">Create an Account</h2>
           
           {/* Name */}
           <div>
             <label className="block font-medium">Your Name:</label>
-            <input type="text" placeholder="Enter your name" className="input input-bordered w-full p-2 border rounded-md" required />
+            <input name="name" type="text" placeholder="Enter your name" className="input input-bordered w-full p-2 border rounded-md" required />
           </div>
 
           {/* Email */}
           <div>
             <label className="block font-medium">Your Email:</label>
-            <input type="email" placeholder="Your email" className="input input-bordered w-full p-2 border rounded-md" required />
+            <input name="email" type="email" placeholder="Your email" className="input input-bordered w-full p-2 border rounded-md" required />
           </div>
 
           {/* Password */}
           <div>
             <label className="block font-medium">Password:</label>
-            <input type="password" placeholder="Your password" className="input input-bordered w-full p-2 border rounded-md" required />
+            <input name="password" type="password" placeholder="Your password" className="input input-bordered w-full p-2 border rounded-md" required />
           </div>
 
           {/* Confirm Password */}
           <div>
             <label className="block font-medium">Confirm Password:</label>
-            <input type="password" placeholder="Confirm password" className="input input-bordered w-full p-2 border rounded-md" required />
+            <input name="confirmpassword" type="password" placeholder="Confirm password" className="input input-bordered w-full p-2 border rounded-md" required />
           </div>
 
           {/* Birthdate and Gender */}
           <div className="grid grid-cols-2 gap-4">
             <div>
               <label className="block font-medium">Date of Birth:</label>
-              <input type="date" className="input input-bordered w-full p-2 border rounded-md" required />
+              <input name="date" type="date" className="input input-bordered w-full p-2 border rounded-md" required />
             </div>
             <div className="mt-4">
               <label className="block font-medium">Gender:</label>
               <div className="flex items-center gap-4">
                 <label className="flex items-center gap-2">
-                  <input type="radio" name="gender" value="male" className="w-4 h-4" required />
+                  <input  type="radio" name="gender" value="male" className="w-4 h-4" required />
                   Male
                 </label>
                 <label className="flex items-center gap-2">
@@ -76,6 +235,12 @@ const SignUp = () => {
           <button className="btn bg-[#C19A6B] text-white font-bold hover:bg-black w-full py-2 rounded-lg transition duration-300">
             Sign Up
           </button>
+
+
+          {
+        error && <h4 className=" font-bold italic text-red-700">{error} </h4>
+
+           }
 
           <hr />
 

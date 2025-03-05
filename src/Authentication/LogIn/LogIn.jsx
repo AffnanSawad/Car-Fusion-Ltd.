@@ -1,12 +1,71 @@
+import { useContext, useState } from "react";
 import { FcGoogle } from "react-icons/fc";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../AuthProvider/AuthProvider";
+import Swal from "sweetalert2";
 
 const LogIn = () => {
+
+
+    
+    const {setUser, LogIn, GoogleLogIn, FaceBookLogIn, LogOut} = useContext(AuthContext)
+    
+    const navigate = useNavigate();
+
+    const [error, setError] = useState('');
+   
+     
+     //   form handler
+   const handleLogin = e =>{
+
+    e.preventDefault();
+
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+
+   
+    console.log(email,password);
+
+    
+    LogIn( email,password)
+
+    .then(result=> {
+
+        setUser(result.user);
+
+        e.target.reset();
+
+        navigate('/');
+
+        // sweetalert
+                 // alert
+                 Swal.fire({
+                    title: 'Log In Successfully!',
+                    // text: 'Successfully Sign In!',
+                    icon: 'success',
+                    confirmButtonText: 'Cool'
+                  })
+
+
+    })
+
+    .catch(error=>{
+        setError(error.message)
+    })
+
+
+
+   }
+
+
+
+
+
     return (
         <div className="bg-orange-50 min-h-screen flex items-center justify-center p-4 pt-28">
             <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-10 items-center rounded-3xl  p-6 md:p-10">
                 {/* Left Side - Form */}
-                <form className="shadow-lg p-8 rounded-lg w-full flex flex-col gap-6 transition-transform duration-700 shadow-orange-300 bg-white">
+                <form onSubmit={handleLogin} className="shadow-lg p-8 rounded-lg w-full flex flex-col gap-6 transition-transform duration-700 shadow-orange-300 bg-white">
                     <h2 className="text-xl font-bold text-center text-orange-500">Log In To Your Account</h2>
                     
                     {/* Form Fields */}
@@ -14,6 +73,7 @@ const LogIn = () => {
                         <div className="form-control w-full">
                             <label className="label font-medium">Email:</label>
                             <input 
+                            name="email"
                                 type="email" 
                                 placeholder="Your email" 
                                 className="input input-bordered w-full p-2 border rounded-md focus:ring-2 focus:ring-orange-200 outline-none" 
@@ -24,6 +84,7 @@ const LogIn = () => {
                         <div className="form-control w-full">
                             <label className="label font-medium">Password:</label>
                             <input 
+                            name="password"
                                 type="password" 
                                 placeholder="Your password" 
                                 className="input input-bordered w-full p-2 border rounded-md focus:ring-2 focus:ring-orange-200 outline-none" 
@@ -43,6 +104,12 @@ const LogIn = () => {
                     <button className="bg-[#C19A6B] text-white font-bold hover:bg-black w-full py-2 rounded-lg transition duration-300">
                         Login
                     </button>
+
+
+                    {
+        error && <h4 className=" font-bold italic text-red-700">{error} </h4>
+
+                 }
 
                     <hr />
 
