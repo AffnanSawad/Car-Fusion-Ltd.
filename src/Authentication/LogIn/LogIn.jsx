@@ -58,6 +58,39 @@ const LogIn = () => {
    }
 
 
+//    Handler for goggle 
+
+ const handler_googleLogIn = ()=> {
+
+    GoogleLogIn()
+    
+    .then(result =>{
+        console.log(result.user)
+    })
+
+    .catch(error=>{
+        console.log(error.message)
+    })
+
+ }
+
+
+//   handler for Facebook
+
+const handler_facebookLogin = ()=>{
+
+    FaceBookLogIn()
+
+    .then(result=>{
+        console.log(result.user)
+    })
+
+    .catch(error=>{
+        console.log(error.message)
+    })
+}
+
+
 
 
 
@@ -114,14 +147,14 @@ const LogIn = () => {
                     <hr />
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <button type="button" className="text-white bg-[#3b5998] hover:bg-[#3b5998]/90 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex items-center">
+                        <button onClick={handler_facebookLogin} type="button" className="text-white bg-[#3b5998] hover:bg-[#3b5998]/90 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex items-center">
                             <svg className="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 8 19">
                                 <path fillRule="evenodd" d="M6.135 3H8V0H6.135a4.147 4.147 0 0 0-4.142 4.142V6H0v3h2v9.938h3V9h2.021l.592-3H5V3.591A.6.6 0 0 1 5.592 3h.543Z" clipRule="evenodd"/>
                             </svg>
                             Sign in with Facebook
                         </button>
 
-                        <button type="button" className="text-black bg-gray-100 hover:bg-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex items-center">
+                        <button onClick={handler_googleLogIn} type="button" className="text-black bg-gray-100 hover:bg-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex items-center">
                             <FcGoogle className="mr-2" size={20} />
                             Sign in with Google
                         </button>

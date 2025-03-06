@@ -7,7 +7,7 @@ import Swal from "sweetalert2";
 const SignUp = () => {
 
  
-  const {setUser,SignUp,GoogleLogIn, FaceBookLogIn,} = useContext(AuthContext);
+  const {setUser,SignUp,GoogleLogIn, FaceBookLogIn} = useContext(AuthContext);
   
 
   //  success hole navigate kore onno page e niye jabe;
@@ -19,87 +19,6 @@ const SignUp = () => {
 
   //  form handler 
 
-  // const handle_SignUp = (e)=> {
-
-  //   e.preventDefault();
-
-  //   const name = e.target.name.value ;
-  //   const email = e.target.email.value;
-  //   const password = e.target.password.value;
-  //   const confirmpassword = e.target.confirmpassword.value;
-  //   const birthdate = e.target.date.value;
-  //   const Gender = e.target.gender.value;
-
-  //   console.log(name,email,password,confirmpassword,birthdate,Gender);
-   
-
-
-  //   setError('');
-      
-  //   // password validation [regex]
-  //   const regex = /^(?=(.*[A-Z])).{6,}$/;
-
-  //   // Check if the password matches the regex
-  //   if (regex.test(password)) {
-  //     console.log("Password is valid.");
-  //   } else {
-  //     console.log("Password is invalid. It must be at least 6 characters long and contain at least one uppercase letter.");
-
-  //     return
-  //   }
-
-
-  //   if(password != confirmpassword){
-  //     console.log('Password Not Macthed');
-
-  //     return ;
-  //   }
-
-  
-
-
-
-  //   // signUp
-  //  SignUp(email,password)
-  //   .then( result => {
-
-  //       setUser(result.user);
-
-  //     // form reset
-  //       e.target.reset();
-
-  //       // navigate kore home e niye jabe
-  //       navigate('/');
-
-  //       // sweetalert
-  //        Swal.fire({
-  //           title: 'Sign In Successfully!',
-  //           // text: 'Successfully Sign In!',
-  //           icon: 'success',
-  //           confirmButtonText: 'Cool'
-  //         })
-     
-
-       
-    
-  //   })
-
-  //   .catch( error=>{
-        
-  //       setError(error.message);
-  //   })
-   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  // }
 
 
   const handle_SignUp = (e) => {
@@ -148,6 +67,7 @@ const SignUp = () => {
           icon: 'success',
           confirmButtonText: 'Cool',
         });
+     
       })
       .catch((error) => {
         // Show error message if sign-up fails
@@ -156,6 +76,45 @@ const SignUp = () => {
   };
   
 
+  //  Goggle logIn handler
+  const handleGoogleLogin = ()=>{
+
+    GoogleLogIn()
+    .then(result => {
+
+        console.log(result.user);
+
+        Swal.fire({
+          title: "  Logged In!",
+          text: "You Are Successfully Logged In!",
+          icon: "success"
+        });
+
+        //    navigate
+        navigate('/');
+
+    
+    })
+
+    .catch(error=>{
+        console.log(error.message)
+    })
+
+}
+
+   
+//  Handler facebook
+
+const handler_facebook = () => {
+
+  FaceBookLogIn()
+  .then( result =>{
+    console.log(result.user)
+  })
+  .catch(error=> {
+    console.log(error.message)
+  })
+}
 
 
 
@@ -244,16 +203,18 @@ const SignUp = () => {
 
           <hr />
 
+        
+
           {/* Social media button - google , fb */}
           <div className="flex flex-col sm:flex-row  gap-4 justify-center">
-                        <button type="button" className="text-white bg-[#3b5998] hover:bg-[#3b5998]/90 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex items-center">
+                        <button onClick={handler_facebook} type="button" className="text-white bg-[#3b5998] hover:bg-[#3b5998]/90 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex items-center">
                             <svg className="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 8 19">
                                 <path fillRule="evenodd" d="M6.135 3H8V0H6.135a4.147 4.147 0 0 0-4.142 4.142V6H0v3h2v9.938h3V9h2.021l.592-3H5V3.591A.6.6 0 0 1 5.592 3h.543Z" clipRule="evenodd"/>
                             </svg>
                             Sign in with Facebook
                         </button>
 
-                        <button type="button" className="text-black bg-gray-100 hover:bg-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex items-center">
+                        <button onClick={handleGoogleLogin} type="button" className="text-black bg-gray-100 hover:bg-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex items-center">
                             <FcGoogle className="mr-2" size={20} />
                             Sign in with Google
                         </button>

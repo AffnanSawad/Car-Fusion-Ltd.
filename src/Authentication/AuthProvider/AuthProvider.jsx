@@ -1,7 +1,7 @@
 import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import { Children, createContext, useEffect, useState } from "react";
 import auth from "../firebase/firebase.config";
-import { FacebookAuthProvider, GoogleAuthProvider } from "firebase/auth/web-extension";
+import { FacebookAuthProvider, GoogleAuthProvider } from "firebase/auth";
 
 
 //  Start :
