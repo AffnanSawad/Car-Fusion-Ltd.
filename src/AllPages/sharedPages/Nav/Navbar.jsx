@@ -1,9 +1,15 @@
-import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { Link, Navigate, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../../Authentication/AuthProvider/AuthProvider";
+import auth from "../../../Authentication/firebase/firebase.config";
+import Swal from "sweetalert2";
 
 const Navbar = () => {
 
-
-
+   
+  const {user , LogOut} = useContext(AuthContext)
+  
+   const navigate = useNavigate()
 
     //  Nav Options 
 
@@ -13,7 +19,11 @@ const Navbar = () => {
         <li className="hover:text-orange-300 uppercase"><Link to='/'>Home</Link></li>
         <li className="hover:text-orange-300 uppercase"><Link to='/aboutus'> About Us  </Link></li>
         <li className="hover:text-orange-300 uppercase"><Link to='/collections'> Collections </Link></li>
-        <li className="hover:text-orange-300 uppercase"><Link to='/sellcar'>  Sell Car </Link></li>
+         
+       <li className="hover:text-orange-300 uppercase"><Link to='/sellcar'>  Sell Car </Link></li>
+         
+
+
        <li className="hover:text-orange-300 uppercase"><Link to='/contact'> Contact Us </Link></li>                  
        <li className="hover:text-orange-300 uppercase"><Link to='/showroom'> ShowRoom </Link></li> 
     
@@ -21,6 +31,35 @@ const Navbar = () => {
     
     
     </>
+
+
+
+  
+//  Handle LogOut 
+
+const handle_LogOut = () => {
+
+  LogOut(auth)
+
+  .then(() => {
+
+    console.log("log out successfully");
+
+    // navigate
+    navigate('/');
+    
+    // swal
+    Swal.fire({
+      title: "  Logged Out!",
+      text: "You Are Successfully Logged Out!",
+      icon: "success"
+    });
+})
+
+.catch(error=>{
+    console.log(error.message)
+})
+}
 
 
 
@@ -61,7 +100,7 @@ const Navbar = () => {
 
       </ul>
     </div>
-    {/* <a className="btn btn-ghost text-xl">daisyUI</a> */}
+   
     <img className="w-[120px]" src="https://i.ibb.co.com/XwM2HjX/images.png" alt="" srcset="" />
 
   </div>
@@ -78,8 +117,23 @@ const Navbar = () => {
   </div>
   <div className="navbar-end">
   
-  <Link to="/login"><button className="btn btn-outline btn-warning mr-10">Log In</button>
+
+ {
+  user ?
+  <div className="flex items-center text-white">
+  <p className="hidden sm:block mr-4">{user.email}</p>
+  <button
+    onClick={handle_LogOut}
+    className="btn bg-red-600 text-white border border-red-600 hover:bg-red-700"
+  >
+    Log Out
+  </button>
+</div>
+  :
+  <Link to="/login"><button className="btn  btn-warning mr-10">Log In</button>
   </Link>
+ }
+ 
 
 
   </div>

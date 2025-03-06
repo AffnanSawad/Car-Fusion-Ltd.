@@ -107,6 +107,7 @@ useEffect(()=> {
 //   Auth Values
   const authValues = {
     setUser,
+    user,
     setLoading,
     SignUp,
     LogIn,

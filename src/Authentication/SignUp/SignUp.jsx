@@ -122,6 +122,10 @@ const handler_facebook = () => {
 
   return (
     <div className="bg-orange-50 min-h-screen flex items-center justify-center px-6 py-20">
+    
+  
+    
+    
       <div className="flex flex-col md:grid md:grid-cols-2 w-full max-w-6xl px-6 py-10 gap-10 items-center rounded-3xl mt-5">
         
         {/* Left Side - Image */}
@@ -229,6 +233,7 @@ const handler_facebook = () => {
         </form>
       </div>
     </div>
+ 
   );
 };
 

@@ -9,6 +9,7 @@ import AboutUs from "../AllPages/AboutUs/AboutUs";
 import SellCar from "../AllPages/SellCar/SellCar";
 import LogIn from "../Authentication/LogIn/LogIn";
 import SignUp from "../Authentication/SignUp/SignUp";
+import PrivateRoute from "../Authentication/PrivateRoute/PrivateRoute";
 // import Home from "../AllPages/Home/Home/Home";
 
 
@@ -38,7 +39,7 @@ import SignUp from "../Authentication/SignUp/SignUp";
     },
     {
       path: '/sellcar',
-      element : <SellCar></SellCar>
+      element : <PrivateRoute><SellCar></SellCar></PrivateRoute>
     },
     {
       path: '/login',
