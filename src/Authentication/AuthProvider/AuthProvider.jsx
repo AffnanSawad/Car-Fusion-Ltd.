@@ -9,8 +9,10 @@ import { FacebookAuthProvider, GoogleAuthProvider } from "firebase/auth";
 
 export const AuthContext = createContext();
 
-const GoogleProvider = new GoogleAuthProvider()
 
+//  FaceBook - Google Login / signup :
+
+const GoogleProvider = new GoogleAuthProvider()
 const FacebookProvider = new FacebookAuthProvider();
 
 
@@ -108,6 +110,7 @@ useEffect(()=> {
   const authValues = {
     setUser,
     user,
+    loading,
     setLoading,
     SignUp,
     LogIn,
