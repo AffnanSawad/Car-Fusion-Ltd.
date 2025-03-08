@@ -3,6 +3,7 @@ import Advertisement from "../AllPages/Advertisement/Advertisement";
 import AfterBanner from "../AllPages/AfterBanner/AfterBanner";
 import Banner from "../AllPages/Banner/Banner";
 import CarLogoPage from "../AllPages/CarLogoPage/CarLogoPage";
+import CarShowHome from "../AllPages/CarShowHome/CarShowHome";
 import Reviews from "../AllPages/Reviews/Reviews";
 import Sponsered from "../AllPages/Sponsered/Sponsered";
 import SubMitReview from "../AllPages/SubMitReview/SubMitReview";
@@ -16,6 +17,7 @@ const Home = () => {
            <AfterBanner></AfterBanner>
            <AboutSection></AboutSection>
            {/* <AfterBanner></AfterBanner> */}
+           <CarShowHome></CarShowHome>
            <Advertisement></Advertisement>
            <YoutubeChannel></YoutubeChannel>
            <CarLogoPage></CarLogoPage>

@@ -10,6 +10,8 @@ import SellCar from "../AllPages/SellCar/SellCar";
 import LogIn from "../Authentication/LogIn/LogIn";
 import SignUp from "../Authentication/SignUp/SignUp";
 import PrivateRoute from "../Authentication/PrivateRoute/PrivateRoute";
+import CarCollection from "../AllPages/CarCollection/CarCollection";
+
 // import Home from "../AllPages/Home/Home/Home";
 
 
@@ -48,6 +50,10 @@ import PrivateRoute from "../Authentication/PrivateRoute/PrivateRoute";
     {
       path: '/signup',
       element: <SignUp></SignUp>
+    },
+    {
+      path: '/collections',
+      element: <CarCollection></CarCollection>
     }
 
 
