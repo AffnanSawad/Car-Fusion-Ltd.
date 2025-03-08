@@ -2,18 +2,16 @@
 
 
 const EditedCar = ({car}) => {
-
+     
+  // Destructuring data :
     const{ image , fuel_type , model ,title,price} = car;
+   
+   
     return (
-        <div className="">  
-
-
-
-
-
-
-
-
+       
+      //  Card
+       
+       <div>  
 
 <div className="card bg-white w-96 shadow-xl flex flex-col h-full">
   <figure className="px-2 pt-2">

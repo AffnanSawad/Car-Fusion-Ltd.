@@ -1,26 +1,27 @@
 import { BiSolidCartAdd } from "react-icons/bi";
 import { TbListDetails } from "react-icons/tb";
+import { Link } from "react-router-dom";
 
 
 const CarCard = ({car}) => {
 
-    const{id, image , description , fuel_type , model ,brand , title,price} = car;
+    
+  //  Destructuring Data :
+  
+  const{id, image , fuel_type ,details, model ,brand , title,price} = car;
+   
+   
+   
+   
     return (
-        <div className="">  
-
-
-
-
-
-
-
-
+        <div className="Card-Container">  
+ 
 
 <div className="card bg-white w-96 shadow-xl flex flex-col h-full">
   <figure className="px-2 pt-2">
     <img
       src={image}
-      alt={title}
+     
       className=" rounded-md object-cover h-64 w-full" // Ensure image doesn't overflow
     />
   </figure>
@@ -40,17 +41,40 @@ const CarCard = ({car}) => {
     <div className="card-actions flex gap-2 mt-4">
       
 
-    <button className="btn bg-black font-bold hover:bg-[#C19A6B] text-white w-full py-2 rounded-lg transition duration-300">
+  {/* View Details Button */}
+   
+   
+  
+  
+  <Link to={`/details/${id}`} className="flex w-full">
+  
+  
+  <button className="btn bg-black font-bold w-full hover:bg-[#C19A6B] text-white py-2 rounded-lg transition duration-300">
         <TbListDetails />
         View Details
       </button>
+  
+  
+  
+  </Link>
+  
+    
+  
+
 
 
       
-      <button className="btn bg-[#C19A6B] text-white font-bold hover:bg-black w-full py-2 rounded-lg transition duration-300">
-        <BiSolidCartAdd />
-        Add To Your Cart
-      </button>
+      <Link  className="flex w-full">
+ 
+ 
+  <button className="btn bg-[#C19A6B] text-white font-bold hover:bg-black w-full py-2 rounded-lg transition duration-300">
+    <BiSolidCartAdd />
+    Add To Your Cart
+  </button>
+
+
+</Link>
+
 
 
     

@@ -11,7 +11,10 @@ const CarShowHome = () => {
  //  Set States :
  
      const [ AllCars , SetAllCars] = useState([]);
- 
+        
+
+    //  Fetching Data:
+
      useEffect( ()=> {
  
          fetch('/data.json')
@@ -29,9 +32,12 @@ const CarShowHome = () => {
            
            
            <h1 className="text-4xl text-black font-bold text-center pt-10">Our <span className="text-orange-400"> Collections </span></h1>
+         
+        {/* Slicing data */}
+
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 bg-orange-100 py-10 pl-5 ">
-
+          
       
           {AllCars.slice(0, 3).map(car => (
             <EditedCar key={car.id} car={car} />

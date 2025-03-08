@@ -11,6 +11,7 @@ import LogIn from "../Authentication/LogIn/LogIn";
 import SignUp from "../Authentication/SignUp/SignUp";
 import PrivateRoute from "../Authentication/PrivateRoute/PrivateRoute";
 import CarCollection from "../AllPages/CarCollection/CarCollection";
+import CarDetails from "../AllPages/CarDetails/CarDetails";
 
 // import Home from "../AllPages/Home/Home/Home";
 
@@ -54,6 +55,13 @@ import CarCollection from "../AllPages/CarCollection/CarCollection";
     {
       path: '/collections',
       element: <CarCollection></CarCollection>
+    },
+    {
+      path: '/details/:id',
+
+      loader : ()=> fetch('./data.json'),
+
+      element : <CarDetails></CarDetails>
     }
 
 

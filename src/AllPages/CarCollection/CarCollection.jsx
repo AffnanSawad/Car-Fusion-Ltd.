@@ -7,25 +7,17 @@ const CarCollection = () => {
     //  Set States :
 
     const [ AllCars , SetAllCars] = useState([]);
+     
 
+    //  Fetching Data :
     useEffect( ()=> {
 
         fetch('/data.json')
         .then(res=> res.json())
         .then(data=> SetAllCars(data))
-
-
-    }  ,[])
-
-
-
-
-
-
-
-
-
-
+    }  ,
+    
+    [])
 
 
     return (
@@ -51,9 +43,12 @@ const CarCollection = () => {
 <div className="grid grid-cols-1   md:grid-cols-2 lg:grid-cols-3 gap-6 bg-orange-100 p-10">
    
    
-    {AllCars.map(car => (
-        <CarCard key={car.id} car={car} />
-    ))}
+    {
+    
+    AllCars.map(car => ( <CarCard key={car.id} car={car} />
+    ))
+    
+    }
 
 
 
