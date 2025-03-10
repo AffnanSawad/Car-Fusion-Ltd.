@@ -61,7 +61,7 @@ import CarDetails from "../AllPages/CarDetails/CarDetails";
 
       loader : ()=> fetch('./data.json'),
 
-      element : <CarDetails></CarDetails>
+      element : <PrivateRoute><CarDetails></CarDetails></PrivateRoute>
     }
 
 

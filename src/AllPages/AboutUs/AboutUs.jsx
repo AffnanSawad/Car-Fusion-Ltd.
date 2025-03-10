@@ -32,16 +32,16 @@ const AboutUs = () => {
 
         {/* Mission & Vision */}
         <div className="grid md:grid-cols-2 gap-8">
-          <div className="p-6 bg-white shadow-md rounded-xl">
+          <div className="p-6 bg-white shadow-md rounded-xl hover:scale-105 transition-transform duration-700">
             <h3 className="text-2xl font-bold text-orange-500">Our Mission</h3>
-            <p className="text-gray-700 mt-3 font-semibold">
+            <p className="text-gray-700 mt-3 font-semibold ">
               To revolutionize the automobile industry by offering a
               trustworthy, efficient, and customer-friendly marketplace for car
               buyers and service seekers.
             </p>
           </div>
-          <div className="p-6 bg-white shadow-md rounded-xl">
-            <h3 className="text-2xl font-bold text-orange-500">Our Vision</h3>
+          <div className="p-6 bg-white shadow-md rounded-xl hover:scale-105 transition-transform duration-700">
+            <h3 className="text-2xl font-bold text-orange-500 ">Our Vision</h3>
             <p className="text-gray-700 mt-3 font-semibold">
               To be the most preferred and reliable automotive marketplace,
               bringing innovation, transparency, and ease to car trading and
@@ -51,12 +51,12 @@ const AboutUs = () => {
         </div>
 
         {/* Why Choose Us */}
-        <div className="mt-16">
+        <div className="mt-16 ">
           <h2 className="text-3xl font-bold text-orange-500 text-center">
             Why Choose Car Fusion?
           </h2>
-          <div className="grid md:grid-cols-3 gap-8 mt-8">
-            <div className="bg-white p-6 shadow-md rounded-xl text-center">
+          <div className="grid md:grid-cols-3 gap-8 mt-8 ">
+            <div className="bg-white p-6 shadow-md rounded-xl text-center  hover:scale-105 transition-transform duration-700">
               <h4 className="text-xl font-semibold text-gray-900 ">
                 Wide Range of Cars
               </h4>
@@ -65,7 +65,7 @@ const AboutUs = () => {
                 price comparisons.
               </p>
             </div>
-            <div className="bg-white p-6 shadow-md rounded-xl text-center">
+            <div className="bg-white p-6 shadow-md rounded-xl text-center hover:scale-105 transition-transform duration-700">
               <h4 className="text-xl font-semibold text-gray-900">
                 Secure Payment
               </h4>
@@ -74,7 +74,7 @@ const AboutUs = () => {
                 purchases and services.
               </p>
             </div>
-            <div className="bg-white p-6 shadow-md rounded-xl text-center">
+            <div className="bg-white p-6 shadow-md rounded-xl text-center hover:scale-105 transition-transform duration-700">
               <h4 className="text-xl font-semibold text-gray-900">
                 Quality Services
               </h4>

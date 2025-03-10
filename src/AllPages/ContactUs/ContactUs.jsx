@@ -41,7 +41,7 @@ const ContactUs = () => {
     <div className="cardContainer grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 px-4 md:px-10 my-10">
  
  {/* Card 1 */}
- <div className="card bg-base-100 shadow-sm p-5 hover:scale-110 transition-transform duration-800">
+ <div className="card bg-base-100 shadow-sm p-5 hover:scale-110 transition-transform duration-700">
    <h1 className="mx-auto">
      <FaAddressCard 
      size={100} className="mt-5 text-gray-700" />
@@ -53,7 +53,7 @@ const ContactUs = () => {
  </div>
  
  {/* Card 2 */}
- <div className="card bg-white shadow-sm p-5 hover:scale-110 transition-transform duration-800">
+ <div className="card bg-white shadow-sm p-5 hover:scale-110 transition-transform duration-700">
    <h1 className="mx-auto">
      <IoCallSharp size={100} className="mt-5" />
    </h1>
@@ -65,7 +65,7 @@ const ContactUs = () => {
  </div>
  
  {/* Card 3 */}
- <div className="card bg-base-100 shadow-sm p-5 hover:scale-110 transition-transform duration-800">
+ <div className="card bg-base-100 shadow-sm p-5 hover:scale-110 transition-transform duration-700">
    <h1 className="mx-auto">
      <MdEmail size={100} className="mt-5 " />
    </h1>
@@ -78,7 +78,7 @@ const ContactUs = () => {
 
 {/* 4 */}
 
- <div className="card bg-base-100 shadow-sm p-5 hover:scale-110 transition-transform duration-800">
+ <div className="card bg-base-100 shadow-sm p-5 hover:scale-110 transition-transform duration-700">
    <h1 className="mx-auto">
      <IoIosTime size={100} className="mt-5 " />
    </h1>

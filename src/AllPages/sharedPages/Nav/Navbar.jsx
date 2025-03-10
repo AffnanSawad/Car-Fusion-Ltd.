@@ -3,6 +3,8 @@ import { Link, Navigate, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../Authentication/AuthProvider/AuthProvider";
 import auth from "../../../Authentication/firebase/firebase.config";
 import Swal from "sweetalert2";
+import { BsCartCheckFill } from "react-icons/bs";
+import UseCart from "../../../Hooke/UseCart";
 
 const Navbar = () => {
 
@@ -10,6 +12,8 @@ const Navbar = () => {
   const {user , LogOut} = useContext(AuthContext)
   
    const navigate = useNavigate()
+
+   const [cart] = UseCart()
 
     //  Nav Options 
 
@@ -21,6 +25,26 @@ const Navbar = () => {
         <li className="hover:text-orange-300 uppercase"><Link to='/collections'> Collections </Link></li>
          
        <li className="hover:text-orange-300 uppercase"><Link to='/sellcar'>  Sell Car </Link></li>
+
+
+       {
+              user &&
+
+              <li> 
+                
+              <Link to='/dashboard/myCarts'> 
+            
+            
+            <button className="btn">
+            <BsCartCheckFill />   <div className="badge badge-sm badge-secondary">+{cart.length} </div>
+             </button>
+            
+            
+             </Link></li>
+            
+
+
+             }
          
 
 

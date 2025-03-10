@@ -16,7 +16,6 @@ const Home = () => {
            <Banner></Banner>
            <AfterBanner></AfterBanner>
            <AboutSection></AboutSection>
-           {/* <AfterBanner></AfterBanner> */}
            <CarShowHome></CarShowHome>
            <Advertisement></Advertisement>
            <YoutubeChannel></YoutubeChannel>
