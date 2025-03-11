@@ -1,12 +1,82 @@
+import { useState } from "react";
 import { FaAddressCard} from "react-icons/fa";
 import { IoIosTime } from "react-icons/io";
 import { IoCallSharp } from "react-icons/io5";
 import { MdEmail } from "react-icons/md";
+import Swal from "sweetalert2";
 
 
 
 const ContactUs = () => {
 
+   
+  const [name, setName] = useState('');
+ 
+  const [email, setEmail] = useState('');
+
+  const [comment, setComment] = useState('')
+
+  
+
+  // handle submit
+
+  const handleSubmit = (e) => {
+   
+
+    e.preventDefault()
+   
+    const formData = {
+
+      name : name ,
+      email : email ,
+      comment : comment 
+    }
+
+
+    fetch('http://localhost:5000/myreview', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+
+        
+         Swal.fire({
+         title: 'Submitted Successfully!',
+         // text: 'Successfully Sign In!',
+         icon: 'success',
+         confirmButtonText: 'Cool',
+         position: "top-right"
+        })
+
+
+         // ✅ Reset state after successful submission
+      setName('');
+      setEmail('');
+      setComment('');
+
+
+      
+      })
+      .catch((error) => {
+        console.error(error);
+         Swal.fire({
+                      icon: 'warning',
+                      title: 'Failed To Submit',
+                     
+                      timer: 1500,
+                      showConfirmButton: false,
+                      position: "top-right"
+                    });
+      });
+
+
+
+  }
     
 
 
@@ -126,7 +196,11 @@ const ContactUs = () => {
     </div>
 
     {/* Right Side - Form */}
-    <form className="bg-white shadow-lg p-8 rounded-lg w-full md:w-1/2">
+    <form 
+    
+    onSubmit={handleSubmit}
+    
+    className="bg-white shadow-lg p-8 rounded-lg w-full md:w-1/2">
       <h2 className="text-3xl font-bold text-center  mb-6 text-orange-500">Contact Us</h2>
 
       {/* Name & Email in Flex */}
@@ -136,6 +210,8 @@ const ContactUs = () => {
           <label className="label font-medium">Name:</label>
           <input 
             type="text" 
+            value={name}
+            onChange={(e)=> setName(e.target.value)}
             placeholder="Your name" 
             className="input input-bordered w-full p-2 border rounded-md focus:ring-2 focus:ring-200 outline-none" 
             required 
@@ -147,6 +223,8 @@ const ContactUs = () => {
           <label className="label font-medium">Email:</label>
           <input 
             type="email" 
+            value={email}
+            onChange={(e)=> setEmail(e.target.value)}
             placeholder="Your email" 
             className="input input-bordered w-full p-2 border rounded-md focus:ring-2 focus:ring-orange-200 outline-none" 
             required 
@@ -158,6 +236,8 @@ const ContactUs = () => {
       <div className="mt-4">
         <label className="block text-lg font-semibold mb-2">Enter Your Comments:</label>
         <textarea 
+        value={comment}
+        onChange={(e)=> setComment(e.target.value)}
           className="w-full h-32 p-3 border rounded-md focus:ring-2 focus:ring-orange-200 outline-none resize-none"
           placeholder="Type here..."
         />
