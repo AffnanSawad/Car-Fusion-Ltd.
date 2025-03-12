@@ -12,6 +12,9 @@ import SignUp from "../Authentication/SignUp/SignUp";
 import PrivateRoute from "../Authentication/PrivateRoute/PrivateRoute";
 import CarCollection from "../AllPages/CarCollection/CarCollection";
 import CarDetails from "../AllPages/CarDetails/CarDetails";
+import Dashboard from "../Dashboard/Dashboard/Dashboard";
+import MyCart from "../Dashboard/MyCart";
+import Payment from "../Dashboard/Payment/Payment/Payment";
 
 // import Home from "../AllPages/Home/Home/Home";
 
@@ -67,4 +70,30 @@ import CarDetails from "../AllPages/CarDetails/CarDetails";
 
       ]
     },
+
+
+    {
+      path: 'dashboard',
+      element : <Dashboard></Dashboard>,
+
+      children : [
+
+    {
+     
+      path: 'mycart',
+      element : <MyCart></MyCart>
+
+    },
+    {
+      path:'payment',
+      element: <Payment></Payment>
+    },
+   
+
+
+
+
+
+      ]
+    }
   ]);

@@ -32,7 +32,7 @@ const Navbar = () => {
 
               <li> 
                 
-              <Link to='/dashboard/myCarts'> 
+              <Link to='/dashboard/mycart'> 
             
             
             <button className="btn">
