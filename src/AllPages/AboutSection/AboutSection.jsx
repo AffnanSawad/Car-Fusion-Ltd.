@@ -33,7 +33,7 @@ const AboutSection = () => {
               {/* Button */}
               <div className="pt-10">
                 
-                <Link>
+                <Link to='aboutus'>
                 
                 <button className="btn bg-[#C19A6B] hover:bg-black text-white px-6 py-3 text-xl uppercase rounded-lg transition">
                   Know More
