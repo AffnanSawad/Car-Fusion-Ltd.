@@ -145,10 +145,10 @@ const handle_LogOut = () => {
  {
   user ?
   <div className="flex items-center text-white">
-  <p className="hidden sm:block mr-4">{user.email}</p>
+  <p className="hidden sm:block mr-4 mt-3">{user.email}</p>
   <button
     onClick={handle_LogOut}
-    className="btn bg-red-600 text-white border border-red-600 hover:bg-red-700"
+    className="btn bg-red-600 mr-10 text-white border border-red-600 hover:bg-red-700"
   >
     Log Out
   </button>

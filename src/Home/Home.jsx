@@ -1,6 +1,7 @@
 import AboutSection from "../AllPages/AboutSection/AboutSection";
 import Advertisement from "../AllPages/Advertisement/Advertisement";
 import AfterBanner from "../AllPages/AfterBanner/AfterBanner";
+import BotpressChatbot from "../AllPages/AIChatBot/BotpressChatbot";
 import Banner from "../AllPages/Banner/Banner";
 import CarLogoPage from "../AllPages/CarLogoPage/CarLogoPage";
 import CarShowHome from "../AllPages/CarShowHome/CarShowHome";
@@ -13,6 +14,8 @@ import YoutubeChannel from "../AllPages/YoutubeChannel/YoutubeChannel";
 const Home = () => {
     return (
         <div>
+
+            
            <Banner></Banner>
            <AfterBanner></AfterBanner>
            <AboutSection></AboutSection>
@@ -24,7 +27,7 @@ const Home = () => {
            <Sponsered></Sponsered>
             <SubMitReview></SubMitReview>
  
-  
+            <BotpressChatbot></BotpressChatbot>
 
 
         </div>

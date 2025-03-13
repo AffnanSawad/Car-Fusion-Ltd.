@@ -3,6 +3,7 @@ import { FcGoogle } from "react-icons/fc";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
+import axios from "axios";
 
 const LogIn = () => {
 
@@ -13,49 +14,66 @@ const LogIn = () => {
     const navigate = useNavigate();
 
     const [error, setError] = useState('');
+
    
      
      //   form handler
-   const handleLogin = e =>{
+     const handleLogin = e =>{
 
-    e.preventDefault();
-
-    const email = e.target.email.value;
-    const password = e.target.password.value;
-
-   
-    console.log(email,password);
-
+        e.preventDefault();
     
-    LogIn( email,password)
-
-    .then(result=> {
-
-        setUser(result.user);
-
-        e.target.reset();
-
-        navigate('/');
-
-        // sweetalert
-                 // alert
-                 Swal.fire({
-                    title: 'Log In Successfully!',
-                    // text: 'Successfully Sign In!',
-                    icon: 'success',
-                    confirmButtonText: 'Cool'
-                  })
-
-
-    })
-
-    .catch(error=>{
-        setError(error.message)
-    })
-
-
-
-   }
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+    
+       
+        console.log(email,password);
+    
+        
+        LogIn( email,password)
+    
+        .then(result=> {
+    
+    
+            // JWT
+            const loggedUser = result.user ;
+            console.log('token',loggedUser);
+            const user = {email}
+            axios.post('http://localhost:5000/jwt',user , {withCredentials:true})
+            .then(res=>{
+                console.log(res.data)
+            })
+            // jwt ends here
+    
+            navigate('/');
+    
+    
+            setUser(result.user);
+    
+            e.target.reset();
+    
+            
+    
+            // sweetalert
+                     // alert
+                     Swal.fire({
+                        title: 'Log In Successfully!',
+                        // text: 'Successfully Sign In!',
+                        icon: 'success',
+                        confirmButtonText: 'Cool'
+                      })
+    
+    
+        })
+    
+        .catch(error=>{
+            setError(error.message)
+        })
+    
+    
+    
+       }
+    
+    
 
 
 //    Handler for goggle 
@@ -66,6 +84,7 @@ const LogIn = () => {
     
     .then(result =>{
         console.log(result.user)
+        navigate('/')     
     })
 
     .catch(error=>{
@@ -83,6 +102,8 @@ const handler_facebookLogin = ()=>{
 
     .then(result=>{
         console.log(result.user)
+
+        navigate('/') 
     })
 
     .catch(error=>{
