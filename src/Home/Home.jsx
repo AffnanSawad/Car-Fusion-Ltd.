@@ -16,7 +16,8 @@ const Home = () => {
         <div>
 
             
-           <Banner></Banner>
+        
+           <Banner></Banner>      
            <AfterBanner></AfterBanner>
            <AboutSection></AboutSection>
            <CarShowHome></CarShowHome>

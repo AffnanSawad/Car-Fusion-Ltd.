@@ -36,7 +36,7 @@ const CarShowHome = () => {
         {/* Slicing data */}
 
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 bg-orange-100 py-10 pl-5 ">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 bg-orange-100 py-10  ">
           
       
           {AllCars.slice(0, 3).map(car => (

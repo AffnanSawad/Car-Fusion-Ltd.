@@ -55,7 +55,7 @@ const CarCollection = () => {
       </div>
 
       {/* Cards Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 bg-orange-100 p-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 bg-orange-100 py-10 ">
         {sortedCars.length > 0 ? (
           sortedCars.map((car) => <CarCard key={car.id} car={car} />)
         ) : (
