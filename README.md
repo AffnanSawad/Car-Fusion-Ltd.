@@ -1,7 +1,3 @@
-Here’s a more streamlined and professional README file for **Fusion-Car** without the table of contents:
-
----
-
 # **Fusion-Car: Car Dealership and Service Platform**
 
 **Fusion-Car** is a modern, fully-featured platform designed to simplify the process of buying, selling, and servicing vehicles. The application offers a seamless experience for customers to browse car listings, book services, make payments, and manage their accounts—all in one place. Built with the latest technologies, including React, Node.js, MongoDB, Firebase, and Stripe, Fusion-Car provides an intuitive and secure user interface with advanced functionalities.
