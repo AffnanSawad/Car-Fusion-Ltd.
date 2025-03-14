@@ -17,7 +17,6 @@ Key features include:
 - **Car Listings**: Display available cars with sorting options.
 - **Service Bookings**: Secure car repair and service bookings.
 - **User Authentication**: Firebase authentication with social login options (Google, Facebook).
-- **Admin Dashboard**: Manage users, bookings, and inventory from a secure admin panel.
 - **Payment Integration**: Stripe integration for secure transactions and payment history.
 - **Real-Time Chatbot**: An AI-powered chatbot to assist users with common queries.
 
