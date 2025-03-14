@@ -1,32 +1,27 @@
-
-import React, { useEffect, useState } from 'react';
-import CarCard from '../CarCard/CarCard';
+import React, { useEffect, useState } from "react";
+import CarCard from "../CarCard/CarCard";
 
 const CarCollection = () => {
-   
-
   //  States :
   const [allCars, setAllCars] = useState([]);
-  const [sortOrder, setSortOrder] = useState('asc'); // default sort order
+  const [sortOrder, setSortOrder] = useState("asc"); // default sort order
 
   // Fetching Data :
   useEffect(() => {
-    fetch('http://localhost:5000/carsCollections')
-      .then(res => res.json())
-      .then(data => setAllCars(data));
+    fetch("https://car-fusion-server-official.vercel.app/carsCollections")
+      .then((res) => res.json())
+      .then((data) => setAllCars(data));
   }, []);
 
   // Sorted Cars based on sortOrder state
   const sortedCars = [...allCars].sort((a, b) => {
-    if (sortOrder === 'asc') {
+    if (sortOrder === "asc") {
       return a.price - b.price;
     } else {
       return b.price - a.price;
     }
   });
 
-
-  
   return (
     <div>
       {/* Hero Section */}
@@ -61,17 +56,13 @@ const CarCollection = () => {
 
       {/* Cards Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 bg-orange-100 p-10">
-        {
-          sortedCars.length > 0 ? (
-            sortedCars.map(car => (
-              <CarCard key={car.id} car={car} />
-            ))
-          ) : (
-            <p className="text-center col-span-3 text-xl text-gray-600">
-              No cars found.
-            </p>
-          )
-        }
+        {sortedCars.length > 0 ? (
+          sortedCars.map((car) => <CarCard key={car.id} car={car} />)
+        ) : (
+          <p className="text-center col-span-3 text-xl text-gray-600">
+            No cars found.
+          </p>
+        )}
       </div>
     </div>
   );
@@ -79,55 +70,26 @@ const CarCollection = () => {
 
 export default CarCollection;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // import React, { useEffect, useState } from 'react';
 // import CarCard from '../CarCard/CarCard';
 
 // const CarCollection = () => {
 
-
-      
-
 //     const [ AllCars , SetAllCars] = useState([]);
-     
 
 //     //  Fetching Data :
 //     useEffect( ()=> {
 
-//         fetch('http://localhost:5000/carsCollections')
+//         fetch('https://car-fusion-server-official.vercel.app/carsCollections')
 //         .then(res=> res.json())
 //         .then(data=> SetAllCars(data))
 //     }  ,
-    
-//     [])
 
+//     [])
 
 //     return (
 //         <div>
-             
+
 //              <div className="relative w-full h-[75vh]">
 //   {/* Background Image */}
 //   <img
@@ -140,39 +102,25 @@ export default CarCollection;
 //   <div className="absolute inset-0 flex items-center justify-center bg-black/50 bg-opacity-40">
 //     <h1 className="text-3xl text-white md:text-4xl font-bold text-center">
 //      Our <span className="text-orange-400"> Collections </span>
-//     </h1> 
-   
+//     </h1>
+
 //   </div>
 // </div>
-            
+
 // <div className="grid grid-cols-1   md:grid-cols-2 lg:grid-cols-3 gap-6 bg-orange-100 p-10">
-   
-   
+
 //     {
-    
+
 //     AllCars.map(car => ( <CarCard key={car.id} car={car} />
 //     ))
-    
+
 //     }
-
-
 
 // </div>
 
 //         </div>
-  
-
-
-
-
-
 
 //     );
 // };
 
 // export default CarCollection;
-
-
-
-
-
