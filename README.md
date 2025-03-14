@@ -71,7 +71,7 @@ To run this project locally, follow these steps:
     npm start
     ```
 
-6. The app will be available on `http://localhost:3000`.
+6. The app will be available on `http://localhost:5173`.
 
 ## **Usage**
 
@@ -98,12 +98,6 @@ Fusion-Car is open to contributions. If you would like to contribute, follow the
 5. Create a pull request.
 
 We welcome contributions in the form of bug fixes, features, documentation improvements, and more.
-
-## **License**
-
-This project is licensed under the MIT License.
-
----
 
 **Fusion-Car** is designed to enhance the car-buying and service experience with powerful features and a user-friendly interface. Thank you for checking out this project, and feel free to contribute or suggest improvements!
 
