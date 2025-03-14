@@ -26,8 +26,7 @@ const Home = () => {
            <Reviews></Reviews>
            <Sponsered></Sponsered>
             <SubMitReview></SubMitReview>
- 
-            <BotpressChatbot></BotpressChatbot>
+             <BotpressChatbot></BotpressChatbot>
 
 
         </div>

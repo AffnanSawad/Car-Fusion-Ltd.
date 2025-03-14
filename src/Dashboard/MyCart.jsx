@@ -1,5 +1,4 @@
 import { FaTrashAlt } from "react-icons/fa";
- // Make sure the path is correct
 import Swal from "sweetalert2";
 import axios from "axios";
 import { Link } from "react-router-dom";
@@ -55,17 +54,16 @@ const MyCart = () => {
   };
 
   return (
-    <div>
+    <div className="container mx-auto p-4">
       {/* Cart Overview */}
-      <div className="flex justify-around mt-4">
+      <div className="flex flex-col sm:flex-row justify-between items-center sm:mt-4">
         <h1 className="text-xl font-bold text-orange-600">Total Bookings: {cart.length}</h1>
-        <h1 className="text-xl font-bold text-orange-600">Total Price: ${totalPrice}</h1>
-        <Link to="/dashboard/payment">
-          <button className="btn btn-active text-lg btn-accent text-white hover:scale-110 transform transition-all duration-300 ease-in-out">Pay Online</button>
+        <h1 className="text-xl font-bold text-orange-600 mt-2 sm:mt-0">Total Price: ${totalPrice}</h1>
+        <Link to="/dashboard/payment" className="mt-4 sm:mt-0">
+          <button className="btn btn-active text-lg btn-accent text-white hover:scale-110 transform transition-all duration-300 ease-in-out">
+            Pay Online
+          </button>
         </Link>
-
-
-
       </div>
 
       {/* Cart Table */}
@@ -84,10 +82,10 @@ const MyCart = () => {
           <tbody>
             {/* Loop through each item in the cart */}
             {cart.map((item, index) => (
-              <tr key={item._id}>
+              <tr key={item._id} className="text-center">
                 <th>{index + 1}</th>
                 <td>
-                  <div className="flex items-center gap-3">
+                  <div className="flex justify-center items-center gap-3">
                     <div className="avatar">
                       <div className="mask mask-squircle w-12 h-12">
                         <img src={item.image} alt={item.title} />
