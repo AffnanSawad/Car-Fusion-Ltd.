@@ -11,7 +11,6 @@ Fusion-Car is a car dealership and service management platform that allows users
 - Book car services, schedule maintenance, and access repair details.
 - Manage user profiles, view transaction history, and track bookings.
 - Make secure payments via Stripe for purchases and services.
-- For admins: Manage car inventory, bookings, user data, and transactions.
 
 Key features include:
 - **Car Listings**: Display available cars with sorting options.
