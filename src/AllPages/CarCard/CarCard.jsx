@@ -108,9 +108,9 @@ const CarCard = ({ car }) => {
               icon: "warning",
               title: "Already in Cart!",
               text: `${car_cart_item.title} is already added to your cart.`,
-              timer: 1500,
+              timer: 2000,
               showConfirmButton: false,
-              position: "top-right",
+             
             });
           } else {
             // Step 2: Proceed to add if not already in cart
@@ -124,11 +124,11 @@ const CarCard = ({ car }) => {
 
                 if (result.data.insertedId) {
                   Swal.fire({
-                    position: "top-right",
+                    
                     icon: "success",
                     title: `${car_cart_item.title} Added To Your Cart!`,
                     showConfirmButton: false,
-                    timer: 1500,
+                    timer: 2000,
                   });
 
                   refetch(); // Refresh the cart count
